@@ -1,0 +1,123 @@
+/*
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #68a4ff;
+}
+*/
+
+body{
+    background-color: aqua;
+}
+
+.clock{
+    margin: 50px auto 10px auto;
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white url(clock3.png);
+    background-size: cover;
+    border-radius: 50%; /*これで四角が丸になる*/
+    border: 2px solid black; /*時計の淵*/
+    /*box-shadow: inset  5px 0px 5px rgba(0,0,0,0.2) */
+    /*時計内側、時計外側の下、時計外側立体に見せる*/
+}
+
+.clock::before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #848484;
+    border:2px solid #fff;
+    z-index: 5;
+    border-radius: 50%;
+}
+
+.hour, .min, .sec{
+    position: absolute;
+}
+
+.hour, .hr{
+    width: 160px;
+    height: 160px;
+}
+ 
+.min, .mn{
+    width: 210px;
+    height: 210px;
+}
+
+.sec, .sc{
+    width: 230px;
+    height: 230px;
+}
+
+.hr, .mn, .sc{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.hr::before{
+    content: '';
+    position: absolute;
+    width: 8px;  /*短針の幅*/
+    height: 75px;  /*短針の高さ*/
+    background-color: #848484; /*短針の色*/
+    z-index: 1;
+    border-radius: 50%;
+}
+
+.mn::before{
+    content: '';
+    position: absolute;
+    width: 10px;  /*長針の幅*/
+    height: 100px;  /*長針の高さ*/
+    background-color: #d6d6d6; /*長針の色*/
+    z-index: 2;
+    border-radius: 80% ;  /*6px 6px 0 0*/
+    opacity: 0.8;
+}
+
+.sc::before{
+    content: '';
+    position: absolute;
+    width: 2px;  /*秒針の幅*/
+    height: 110px;  /*秒針の高さ*/
+    background-color: #ff6767; /*秒針の色*/
+    z-index: 3;
+    border-radius: 50% ;  /*6px 6px 0 0*/
+}
+
+.dgtlclock{
+    display: block;
+}
+
+.ymdhm{
+    margin-top: 3px;
+    padding-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: 30px;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 40px;
+    letter-spacing:2px;
+    text-align: center;
+}
+
+

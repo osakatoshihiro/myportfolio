@@ -1,0 +1,176 @@
+*{
+  box-sizing: border-box;
+}
+/*box-sizingをborder-boxにすると、widthの合計にpaddingとborderが含まれるようになる→paddingやborderの追加によるレイアウト崩れを未然に防げる*/
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width:1000px; /*レスポンシブには非対応*/
+}
+
+a:link, a:visited, a:active {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover{
+  text-decoration: none;
+  color: white;
+}
+
+#top{
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+}
+
+#topimg{
+  margin-left: 10px;
+  margin-top: 15px;
+}
+
+#tel{
+  margin-top: 30px;
+  margin-left: 330px;
+  width: 200px;
+}
+
+.number{
+  font-size: 18px;
+}
+
+.time{
+  font-size: 10px;
+}
+
+#mail{
+  width: 150px;
+  height: 50px;
+  margin-top: 20px;
+  margin-left: 5px;
+  background-color: rgba(57, 6, 243, 0.8);
+  color: white;
+  padding: 13px 15px 13px 15px;
+  border-radius: 1mm;
+}
+
+#mail:hover{
+  cursor: pointer;
+  background-color: rgba(57, 6, 243, 1);
+}
+
+.naviwrapper{
+  width: 100%;
+  height: auto;
+  background-color: rgb(240, 238, 238);
+}
+
+#navi{
+  width: 1000px;
+  margin-top: -10px;
+  margin-right:auto;
+  margin-left:auto;
+  margin-bottom: -19px;
+  
+}
+
+
+#navi ul{
+  list-style: none;
+}
+
+#navi ul li{
+  display: inline-block;
+  width: 155px;
+  margin-right: -4px; /*微妙に空く隙間を埋める*/
+  text-align: center;
+  border-left: thin solid black;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  z-index: 1;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+#navi ul li:hover{
+  background: linear-gradient(to right, #383838, #080808);
+  color: white;
+  cursor: pointer;
+}
+
+
+.lastli{
+  border-right: thin solid black;
+}
+
+.landwrap{
+  width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.upper{
+  width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+}
+
+.hyoudai, .messhitsu, .henkou, .gattai{
+  width: 475px;
+  margin-top: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  border: solid 1px;
+  border-radius: 3px;
+}
+
+.lower{
+  width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 50px;
+  display: flex;
+}
+
+#discription{
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact{
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  line-height: 60px;
+  font-size: 30px;
+}
+
+
+.lastmail{
+  background-color: rgba(57, 6, 243, 0.8);
+  color: white;
+  padding: 3px 15px 3px 15px;
+  border-radius: 1mm;
+}
+
+.lastmail:hover{
+  cursor: pointer;
+  background-color: rgba(57, 6, 243, 1);
+}
+
+
+
+footer{
+  height: 40px;
+  background-color: rgb(53, 52, 52);
+  color: white;
+  text-align: center;
+  padding: 10px 10px;
+}

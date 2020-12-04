@@ -1,0 +1,789 @@
+*{
+  box-sizing: border-box;
+}
+/*box-sizingをborder-boxにすると、widthの合計にpaddingとborderが含まれるようになる→paddingやborderの追加によるレイアウト崩れを未然に防げる*/
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width:1000px; /*レスポンシブには非対応*/
+}
+
+a:link, a:visited, a:active {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover{
+  text-decoration: none;
+  color: white;
+}
+
+#header{
+  /*border-bottom: 0.5px solid black;*/
+  padding-bottom: 3px;              /*ロゴ画像が少し被るのでずらす*/
+}
+
+#top{
+  width: 1000px;
+  height: 100px;
+  margin: 0 auto;
+  display: flex;
+  z-index: -1;
+}
+
+#topimg{
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+#tel{
+  margin-top: 30px;
+  margin-left: 250px;
+  width: 200px;
+}
+
+.number{
+  font-size: 18px;
+}
+
+.time{
+  font-size: 10px;
+}
+
+#mail{
+  width: 150px;
+  height: 50px;
+  margin-top: 20px;
+  margin-left: 5px;
+  background-color: rgba(57, 6, 243, 0.8);
+  color: white;
+  padding: 13px 15px 13px 15px;
+  border-radius: 1mm;
+}
+
+#mail:hover{
+  cursor: pointer;
+  background-color: rgba(57, 6, 243, 1);
+}
+
+.naviwrapper{
+  width: 100%;
+  height: auto;
+  background-color: rgb(240, 238, 238);
+  margin-top: -30px;
+}
+
+#navi{
+  width: 1000px;
+  margin-top: -10px;
+  margin-right:auto;
+  margin-left:auto;
+  margin-bottom: -19px;
+  
+}
+
+#navi ul{
+  list-style: none;
+}
+
+#navi ul li{
+  display: inline-block;
+  width: 155px;
+  margin-right: -4px; /*微妙に空く隙間を埋める*/
+  text-align: center;
+  border-left: thin solid black;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  z-index: 1;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+#navi ul li:hover{
+  background: linear-gradient(to right, #383838, #080808);
+  color: white;
+  cursor: pointer;
+}
+
+
+.lastli{
+  border-right: thin solid black;
+}
+
+#menubutton {
+  position: relative;
+  margin-top: -80px;
+  margin-left: auto;
+  margin-right: 70px;
+  margin-bottom: 20px;
+  height: 44px;
+  width: 48px;
+  background-color: white;
+  border: 1px solid black;
+  padding: 7px;
+  border-radius: 10%;
+  cursor : pointer;     /* カーソル   */
+  z-index: 2;
+  display: none;
+}
+
+#menubutton div {
+  position: absolute;
+  height: 2px;
+  width: 32px;
+  background-color: black;
+  border-radius: 1px;
+  display: inline-block;
+}
+
+.line1 {
+  top: 9px;
+  transform: rotate(0deg); 
+  transition: transform 0.5s; /*jQuery動作時に機能する*/
+}
+
+.line2{
+  top: 21px;
+}
+
+.line3{
+  top: 33px;
+  transform: rotate(0deg); 
+  transition: transform 0.5s; /*jQuery動作時に機能する*/
+}
+
+.menu-modal-wrapper {
+  position: fixed;  /*★スライドイン*/
+  margin-top: 3px;   /*ロゴ画像被るのを防ぐために少しずらした分を調整*/
+  width:100%;
+	height:9999px;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+  display: none;
+}
+
+.menu-modal {
+  background-color: #c7cacc;
+  position: fixed;  /*★スライドイン*/
+  margin-top: 3px;  /*ロゴ画像被るのを防ぐために少しずらした分を調整*/
+  right:-700px;     /*★スライドイン*/
+  width: 700px;     /*★スライドイン*/
+  height: 9999px;  /*9999は適当。画面いっぱい*/
+  text-align: left;
+  z-index: 101;
+  overflow: hidden; /*はみ出た分は非表示*/
+  display: none;
+}                 /*margin-leftとwidth合わせて95%でちょうど良い*/
+
+.close-menu ul{
+  list-style: none;
+  margin-top: -2px;
+}
+
+.close-menu ul li{
+  font-size: 35px;
+  font-weight: bold;
+  width: 9999px;  /*適当（右いっぱいまで）*/
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 50px;/*左までいっぱいいっぱい背景色*/
+  margin-left: -50px;/*左までいっぱいいっぱい背景色*/
+  border-bottom: solid 1px black;
+
+}
+
+.close-menu ul li:hover{
+  background-color:rgb(179, 177, 177);
+  text-shadow: 1px 1px 1px whitesmoke;/*文字を立体的に*/
+  color: rgb(46, 11, 245);
+  cursor: pointer;
+}
+
+
+
+
+
+
+/*
+.back::before{
+  content: ' ';
+  background-color: rgba(0,0,0,.5);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin-top: 130px;
+  z-index: 1;
+}
+*/
+
+
+.back{
+  background-image: url(../images/view.jpg);
+  background-size: cover;
+  width:100%;
+  overflow: hidden; /*画像トリミング*/
+  height: auto;
+}
+
+
+.toptext{
+  color: white;
+  text-shadow:
+    1px 0 0 black,
+    0 1px 0 black,
+    -1px 0 0 black,
+    0 -1px 0 black;  /*これで白抜きにできる*/
+  width: 100%;
+  height: 600px;
+  background-color: rgba(0, 0, 0, 0.15);
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 60px;
+  font-weight: 950;
+  padding-top: 140px;
+  text-align: center;
+  font-family: "游明朝",  "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+}
+
+.greetingstop{
+  width: 1000px;
+  font-size: 30px;
+  font-weight: 950;
+  margin-top: 40px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  font-family: "游明朝",  "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;  
+  border-top: solid 1px;
+  border-bottom: solid 1px;
+}
+
+.greeting{
+  padding-left: 40px;
+  width: 1000px;
+  display: flex;
+  margin: 0 auto;
+}
+
+.facephoto{
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+.greetingsentence{
+  margin-top: 60px;
+  margin-left: 50px;
+  width: 620px;
+}
+
+.greetingsentence p{
+  font-size: 20px;
+}
+
+
+.servicestop{
+  width: 1000px;
+  margin-top: 80px;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 30px;
+  font-family: "游明朝",  "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  font-weight: 800;
+  text-align: center;
+  border-top: solid 1px;
+  border-bottom: solid 1px;
+
+}
+
+.services{
+  display: flex;
+  width: 900px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 50px;
+}
+
+.land, .house{
+  width: 420px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 60px;
+}
+
+.land p, .house p{
+  font-size: 20px;
+  font-family: "游明朝",  "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  font-weight: 800;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.land img, .house img{
+  display: block;  /*中央寄せ*/
+  margin: auto;  /*中央寄せ*/
+}
+
+.landpic{
+  background-image: url(../images/land.jpg);
+  background-size: cover;
+  width:420px;
+  height: 300px;
+}
+
+.landdiscription, .housediscription{
+  width:400px;
+  height: 300px;
+  opacity: 0;
+}
+
+.landdiscription:hover, .housediscription:hover{
+  opacity: 1;
+  color: white;
+  width: 420px;
+  height: 300px;
+  padding: 30px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-weight: 600;
+  padding-top: 40px;  
+  font-size: 18px;
+  font-family: "游明朝",  "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  text-align: left;
+  cursor: pointer;
+}
+
+.housepic{
+  background-image: url(../images/house.jpg);
+  background-size: cover;
+  width:420px;
+  height: 300px;
+}
+
+#inquiry{
+  background-image: url(../images/buildings.jpg);
+  background-size: cover;
+  width:100%;
+  height: 850px;
+}
+
+.inquirytext{
+  width: 100%;
+  height: 850px;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.inquirytop {
+  width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  padding-top: 50px;
+  font-size: 30px;
+  font-weight: 950;
+  font-family: "游明朝",  "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+}
+
+.inquirytext p{
+  padding-top: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 15px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.inquirysentence{
+  padding-top: 30px;
+  margin-bottom: 50px;
+  width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+
+#confirm-btn{
+  background-color: rgba(57, 6, 243, 0.7);
+  padding: 13px 10px 10px 10px;
+  text-align: center;
+  width: 150px;
+  height: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 5px;
+  color: white;
+}
+
+#confirm-btn:hover{
+  cursor: pointer;
+  background-color: rgba(57, 6, 243, 1);
+}
+
+
+.login-modal-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+  display: none;
+}
+
+.modal {
+  position: relative;
+  margin: 40px auto;
+  background-color: #e6ecf0;
+  padding: 20px 50px 40px 50px;
+  width: 550px;
+  height: 450px;
+  overflow: auto; /*高さの指定＋overflow:auto;でモーダル画面にもスクロールバーが表示される*/
+  text-align: left;
+  font-size: 15px;
+}
+
+.fa-times {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: rgba(128, 128, 128, 0.46);
+  cursor: pointer;
+}
+
+.fa-times:hover {
+  color: rgb(44, 44, 44);
+}
+
+#modify-btn {
+  display       : inline-block;
+  padding       : 10px 20px;   /* 余白       */
+  margin-top   : 30px;
+  margin-left   : 70px;
+  color         : white;     /* 文字色     */
+  border        : none;        /*これを書かなければ、デフォルトで変な線が入る*/
+  border-radius : 3px;          /* 角丸       */
+  background    : rgb(123, 124, 123);     /* 背景色     */
+  opacity       : 0.7;
+  font-size     : 8pt;        /* 文字サイズ */
+  cursor        : pointer;     /* カーソル   */
+  transition    : .3s;         /* なめらか変化 */
+  text-align    : center;
+  height: 50px;
+  vertical-align: top;   /* 上端を揃える */
+}
+
+#submit-btn {
+  display       : inline-block;
+  padding       : 16px 45px 11px 45px;   /* 余白       */
+  margin-top   : 30px;
+  margin-left   : 60px;
+  color         : white;     /* 文字色     */
+  border        : none;        /*これを書かなければ、デフォルトで変な線が入る*/
+  border-radius : 3px;          /* 角丸       */
+  background    : rgb(62, 11, 247);     /* 背景色     */
+  opacity       : 0.7;
+  font-size     : 12pt;        /* 文字サイズ */
+  cursor        : pointer;     /* カーソル   */
+  transition    : .3s;         /* なめらか変化 */
+  text-align    : center;
+  vertical-align: top;   /* 上端を揃える */
+  
+}
+
+
+#confirm-btn:hover, #modify-btn:hover, #submit-btn:hover {  /*マウスが乗ったら、透過を無しにする*/
+  opacity: 1;
+}
+
+#boxName, #boxEmail, #boxMessage{
+  font-weight: bold;
+  padding-left: 15px;  
+  word-wrap: break-word;  /*文字列を折り返す（半角英数字にも効く）*/
+  white-space: pre-line;  /*改行を反映させる*/
+
+}
+
+#footer{
+  border-top: 2px solid black;
+}
+
+.bottomimg{
+  text-align: center;
+}
+
+.bottomcontact{
+  width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.bottomimg p{
+  margin-left: 5px;
+  margin-top: -2px;
+  font-size: 14px;
+}
+
+.bottomtel{
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.bottomnum{
+  font-size: 30px;
+  font-family: impact;
+}
+
+.bottomsen1{
+  font-size: 13px;
+}
+
+.bottomsen2{
+  font-size: 9px;
+}
+
+#copylight{
+  margin-top: 15px;
+  text-align: center;
+}
+
+
+/* -------------「理念と指針」CSS------------------*/
+.sentence{
+  width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 100px;
+  text-align: left;
+}
+
+.topic1, .topic2{
+  margin-top: 40px;
+  padding-top:2px;
+  margin-bottom: 15px;
+  width: 600px;
+  height: 40px;
+  font-size: 25px;
+  font-weight: 700;
+  background: linear-gradient(to right, #fda809, #fffef9);
+}
+
+.topic1sen, .topic2sen{
+  font-size: 15px;
+}
+
+.topic2sen p{
+  font-size:20px;
+  font-weight: 500;
+  margin-bottom: -5px;
+}
+/* ---------------------------------------------------*/
+
+
+
+/* -------------「業務の流れ」CSS------------------*/
+.topic{
+  margin-top: 50px;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.flowwrap{
+  width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+
+.step1, .step2, .step3{
+  display: flex;
+  border: solid 3px rgb(137, 137, 139);
+  border-radius: 5px;
+  padding: 20px 20px;
+}
+
+.click{
+  padding: 3px 5px;
+  color: white;
+  background-color: rgba(57, 6, 243, 0.75);
+}
+
+.click:hover{
+  cursor: pointer;
+  background-color: rgba(57, 6, 243, 1);
+}
+
+.step4{
+  display: flex;
+  border: solid 3px rgb(137, 137, 139);
+  border-radius: 5px;
+  padding: 20px 20px;
+  margin-bottom: 50px;
+}
+
+.step1sen, .step2sen, .step3sen, .step4sen{
+  padding-top: 20px;
+  margin-right: 30px;
+}
+
+.finger{
+  width:600px;
+  text-align: center;
+  margin: 15px auto 30px auto;
+}
+
+/* ---------------------------------------------------*/
+
+
+
+/* -------------「土地に関する登記」CSS------------------*/
+.landwrap{
+  width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.upper{
+  width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+}
+
+.bunpitsu, .chisekikousei, .chimokuhenkou, .gouhitsu{
+  width: 475px;
+  margin-top: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  border: solid 1px;
+  border-radius: 3px;
+}
+
+.lower{
+  width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 50px;
+  display: flex;
+}
+
+#discription{
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact{
+  width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  line-height: 60px;
+  font-size: 30px;
+}
+
+
+.lastmail{
+  background-color: rgba(57, 6, 243, 0.8);
+  color: white;
+  padding: 3px 10px;
+  border-radius: 1mm;
+}
+
+.lastmail:hover{
+  cursor: pointer;
+  background-color: rgba(57, 6, 243, 1);
+}
+/* ---------------------------------------------------*/
+
+
+/* ---------------「建物に関する登記」のCSS----------------*/
+
+.hyoudai, .messhitsu, .henkou, .gattai{
+  width: 475px;
+  margin-top: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  border: solid 1px;
+  border-radius: 3px;
+}
+/* ---------------------------------------------------*/
+
+
+/* ---------------「事務所概要」のCSS-----------------*/
+
+.office{
+  width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+table{
+  width: 400px;
+  border-collapse: collapse;
+}
+
+th{
+  width: 30%;
+  border:solid 1px #aaaaaa;
+  background-color: rgba(170, 169, 172, 0.308);
+  height: 70px;
+}
+
+td{
+  width: 70%;
+  border:solid 1px #aaaaaa;
+}
+/* ---------------------------------------------------*/
+
+
+
+
+
+/* ---------レスポンシブ対応(スマホ向けレイアウト)--------------- */
+@media all and (max-width: 700px) {
+
+  .naviwrapper{
+    display:none;
+  }
+  
+  #menubutton{
+    display:block;
+  }
+
+  #mail, #tel{
+    display: none;
+  }
+
+  .services{
+    display: block;
+    width: 600px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 100px;
+  }
+
+  #header{
+    border-bottom: 2px solid black;
+  }
+
+  .upper, .lower{
+    width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+  }
+  
+  
+
+
+}
+
+

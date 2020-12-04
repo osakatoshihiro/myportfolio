@@ -1,0 +1,118 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    font-family: 'MS PGothic';
+    background-color: rgb(82, 224, 146);
+    flex-wrap: wrap;
+    justify-content: center; /*左右を中央*/
+    align-items: center;  /*上下を中央*/
+
+}
+
+.container{
+    width: 360px;
+    height: 540px;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: rgb(148, 146, 146);
+    border-radius: 6px;
+    box-shadow: 0px 6px 10px 3px rgba(0,0,0,0.3);
+}
+
+#spacing{
+    height: 2px;
+}
+
+#outputsmall{
+    height: 20px;
+    line-height: 20px ;
+    background-color:  black;
+    font-size: 1rem;
+    color: rgb(252, 249, 249);
+    margin: 10px 10px 2px 10px;
+    padding: 1px 1px 1px 1px;
+    text-align: right ;
+    overflow: hidden;        
+}
+
+
+#outputbig{
+    height: 80px;
+    line-height: 80px ;
+    background-color:  #faf3f3;
+    font-size: 3rem;
+    color: rgb(0, 0, 0);
+    margin: 2px 10.5px 10px 10.5px;
+    padding: 5px;
+    letter-spacing: 2px;
+    text-align: right;
+    overflow: hidden;        
+}
+
+.btn_box{
+    width: 360px;
+    height: 400px;
+    display: grid;
+    grid-template-rows:repeat(5,80px) ;
+    grid-template-columns: repeat(4,80px);
+    justify-content: center; /*左右を中央*/
+    align-items: stretch; 
+
+}
+
+.btn_box button{
+    margin: 3px;
+    font-size: 2rem;
+    font-weight: bold;
+    border: none;
+    background: linear-gradient(to right, #e4e2e2, #d3d3d2);
+    color: black;
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn_box button:active{
+    background: black;
+    color: white;
+}
+
+.btn_box #ac_btn{
+    grid-row: 1/2;
+    grid-column: 1/2;
+    background: linear-gradient(to right, #f8312a, #f70b03);
+}
+
+.btn_box #back{
+    background: linear-gradient(to right, #f8b72a, #f7aa03);
+}
+
+.btn_box #plus{
+    grid-row: 4/6; /*4本目の行グリッドラインの直後から、6本目の行グリッドラインの直前まで*/
+    grid-column: 4/5;
+}
+
+.discription{
+    width: 360px;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.discription p{
+    font-size: 25px;
+}
+.discription li{
+    line-height: 25px;
+}
+
+.all{
+    display: flex;
+    width: 650px;
+    margin: 0 auto;
+}

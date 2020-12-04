@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=550">
+  <!--スマホ対応-->
+  <link rel="stylesheet" type="text/css" href="cal.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <title>Calculator</title>
+
+</head>
+
+<body>
+  <div class="all">
+    <div class="container">
+        <div id="spacing">
+        </div>
+
+        <div id="outputsmall">
+        </div>
+
+        <div id="outputbig">
+        </div>
+
+        <div class="btn_box">
+            <!--<button class="ac_btn" onclick="reset()">AC</button>-->
+            <button id="ac_btn">AC</button>
+            <button id="back">BS</button>
+            <button id="plumin">±</button>
+            <button id="devide">÷</button>
+            <!--<button class="numbers" onclick="sese(this)">９</button>-->
+            <button id="number7">７</button>
+            <button id="number8">８</button>
+            <button id="number9">９</button>
+            <button id="times">×</button>
+            <button id="number4">４</button>
+            <button id="number5">５</button>
+            <button id="number6">６</button>
+            <button id="minus">－</button>
+            <button id="number1">１</button>
+            <button id="number2">２</button>
+            <button id="number3">３</button>
+            <button id="plus">＋</button>
+            <button id="number0">０</button>
+            <button id="point">.</button>
+            <button onclick="calc(this)">=</button>
+        </div>
+    </div>
+
+    <div class="discription">
+      <p>工夫したポイント</p>
+      <ul>
+        <li>小窓を設置し、計算過程を可視化</li>
+        <li>最初の数字が「0」の際、連続で「0」は入力できない</li>
+        <li>記号を連続して入力できない</li>
+        <li>入力文字数を制限</li>
+        <li>文字数の制限に合わせて、小数点以下を切り捨て</li>
+      </ul>
+    </div>
+
+  </div>
+    
+
+
+    <!--以下２行はjQueryを動かすために必要-->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="cal.js"></script>
+</body>
+
+</html>

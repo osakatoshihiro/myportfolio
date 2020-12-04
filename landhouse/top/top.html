@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <script src="https://kit.fontawesome.com/f72d549ff4.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="../top/top.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=550">
+  <!--スマホ対応-->
+
+  <title>●●登記測量事務所</title>
+
+</head>
+
+<body>
+
+  <!--ここにヘッダーの内容がJSから読み込まれる -->
+  <div id="header"></div> 
+
+
+  <div class="back">
+    <div class="toptext">
+      土地・建物・登記の専門家が<br>
+      大切な財産管理をサポートします
+    </div>
+  </div>
+
+  <div class="greetingstop">
+    ●●登記測量事務所からのご挨拶
+  </div>
+
+  <div class="greeting">
+    <div class="facephoto">
+      <p><img src="../images/face.png" alt="" width="250px" height="300px"></p>
+      <p>土地家屋調査士　山田 太郎</p>
+    </div>
+    <div class="greetingsentence">
+      <p>
+        ●●登記測量事務所のホームページをご覧いただき、誠にありがとうございます。<br>
+        当事務所は測量及び土地・建物に関する登記の専門家として創業し、２０年の実績を積んでまいりました。<br>
+        今まで以上にお客様のご期待に寄り添い、十二分にご満足・ご納得いただけるサービスを提供していく所存です。<br>
+        どうぞよろしくお願いいたします。
+      </p>
+    </div>
+  </div>
+
+
+  <div class="servicestop">主な業務内容</div>
+  <div class="services">
+
+    <div class="land">
+      <p>土地に関する登記</p>
+      <a href="../land/land.html">
+        <div class="landpic">
+          <div class="landdiscription">
+            土地の各種登記手続きをすることで、土地の権利を明確にし、不動産取引を安全・円滑に行うことができます。<br><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;・土地分筆登記<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;・土地地積更正登記<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;・土地地目変更登記<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;・土地合筆登記　　　等<br>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="house">
+      <p>建物に関する登記</p>
+      <a href="../house/house.html">
+        <div class="housepic">
+          <div class="housediscription">
+            建物の各種登記手続きをすることで、建物の権利を明確にし、不動産取引を安全・円滑に行うことができます。<br><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;・建物表題登記<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;・建物滅失登記<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;・建物表題変更登記　等<br>
+          </div>
+        </div>
+      </a>
+    </div>
+
+
+  </div>
+
+  <div id="inquiry">
+    <div class="inquirytext">
+      <div class='inquirytop'>お問い合わせ</div>
+      <div class="inquirysentence">
+        ・隣地との境界をはっきりさせたい。<br>
+        ・相続人ごとに分筆して相続したい。<br>
+        ・境界杭がないので明確にしたい。<br>
+        ・未登記の古い建物を登記してほしい。<br><br>
+        上記のようなご相談はもちろん、不動産にかかるご相談事などがございましたら、まずはお気軽にお問い合わせください。<br><br>
+        <form name='contactform' id="contactForm" method="post">
+          お名前【必須】<br>
+          <input class='contact-form-name' id="contactFormName" name='name' size='30' type='text' value=''
+            placeholder='山田 花子' /><br><br>
+          メールアドレス【必須】<br>
+          <input class='contact-form-email' id="contactFormEmail" name='email' size='30' type='text' value=''
+            placeholder='mail@example.jp' /><br><br>
+          お問い合わせ内容【必須】<br>
+          <textarea class='contact-form-message' id="contactFormMessage" name='message' cols='58' rows='15'
+            placeholder='本文'></textarea><br><br>
+          <div id="confirm-btn">
+            確認画面へ
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- モーダル画面用 -->
+  <div class="login-modal-wrapper" id="login-modal">
+    <!--モーダルの背景(薄い黒色部分)を作るために必要-->
+    <div class="modal">
+      <!--モーダルのメイン背景を作るために必要-->
+
+      <div class="close-modal">
+        <!-- xボタン(閉じるボタン)-->
+        <i class="fa fa-2x fa-times"></i>
+      </div>
+
+      <h3>ご入力内容</h3>
+
+      <form name="lastcheck" method="post">
+        【お名前】<br>
+        <div id="boxName" name="name">
+        </div><br>
+        【メールアドレス】<br>
+        <div id="boxEmail" name="email">
+        </div><br>
+        【お問い合わせ内容】<br>
+        <div id="boxMessage" name="message">
+        </div><br>
+
+        <div id="modify-btn">
+          前の画面に戻って<br>
+          修正
+        </div>
+
+        <div id="submit-btn">
+          送　信
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+
+
+
+
+
+  <!--ここにフッターの内容がJSから読み込まれる -->
+  <div id="footer"></div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> <!--絶対変えるな。（jqueryスクロールが効かなくなる）-->
+  <script type="text/javascript" src="../top/top.js"></script>
+</body>
+
+</html>

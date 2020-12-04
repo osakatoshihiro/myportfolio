@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=550">
+  <!--スマホ対応-->
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <title>Toshihiro OSAKA</title>
+
+</head>
+
+<body>
+  <!--ヘッダー-->
+  <header>
+    <div class="header-wrapper">
+      <div class="container">
+
+        <!--
+        <div class="header-left">
+          <a href="#top">Toshihiro OSAKA</a>
+        </div>-->
+
+        <!--ハンバーガーメニュー
+        <div class="fa fa-bars menu-icon"></div>-->
+        <div id="menubutton1">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+
+        <!-- メニューのモーダル画面 -->
+        <div class="menu-modal-wrapper"></div>
+        <!--モーダルの背景(薄い黒色部分)を作るために必要-->
+        <div class="menu-modal">
+          <!--モーダルのメイン背景を作るために必要-->
+          <div class="close-menu">
+            <ul>
+              <li class="list"><a class="lista" href="#top">TOP</a></li>
+              <li class="list"><a class="lista" href="#about">ABOUT</a></li>
+              <li class="list"><a class="lista" href="#services">SERVICES</a></li>
+              <li class="list"><a class="lista" href="#contact">CONTACT</a></li>
+            </ul>
+          </div>
+        </div>
+
+
+
+        <div class="header-right">
+          <ul>
+            <li><a href="#top">TOP</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#services">SERVICES</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <!--container-->
+    </div>
+    <!--header-wrapper-->
+  </header>
+
+  <section id="top">
+    <div class="clockupper"></div>
+    <!--空白スペース用-->
+
+    <div class="clock">
+      <div class="hour">
+        <div class="hr" id="hr">
+
+        </div>
+      </div>
+
+      <div class="min">
+        <div class="mn" id="mn">
+
+        </div>
+      </div>
+
+      <div class="sec">
+        <div class="sc" id="sc">
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="dgtlclock">
+      <div class="ymdhms" id="ymdhms"></div>
+    </div>
+
+
+    <div class="topmessage">
+      <h1>Toshihiro OSAKA's Portfolio<br>
+        - Web Engineer -</h1>
+    </div>
+
+  </section>
+
+
+  <section id="about">
+    <div class="aboutwrapper">
+      <div class="introduction">
+        <p class="photo"><img src="images/myphoto.jpg" alt="顔写真" width="250" height="262"></p>
+        <p class="intro">オオサカ トシヒロ と申します。<br>
+          フリーランスで、フロントエンドを中心と<br>
+          したWebサイト制作に携わっております。<br>
+          また、必要なWeb情報を取得するための<br>
+          スクレイピングツールも作成しております。<br>
+        </p>
+
+        <p class="profile">【学歴・職歴】<br>
+          大阪府立大学工学部卒業、京都大学経営管理大学院修了後、学校法人での事務職(ホームページ更新等を担当)を経て、フリーランス(個人事業主)として活動し、現在に至る
+        </p>
+
+        <p class="qualification">【保有資格】<br>
+          &nbsp;TOEIC820点(2010年)／土地家屋調査士(2017年)／測量士補(2017年)／Excel VBA スタンダード(2018年)
+        </p>
+      </div>
+
+      <div class="icons">
+        <p class="skills"><i class="fas fa-tools"></i> SKILLS</p>
+        <div class="iconupper">
+          <div class="icon">
+            <img src="images/html.png" alt="html" width="90" height="90">
+            <p>HTML</p>
+          </div>
+
+          <div class="icon">
+            <img src="images/css.png" alt="css" width="90" height="90">
+            <p>CSS</p>
+          </div>
+
+          <div class="icon">
+            <img src="images/js.png" alt="js" width="90" height="90">
+            <p>JavaScript</p>
+          </div>
+
+        </div>
+
+        <div class="iconlower">
+          <div class="icon">
+            <img src="images/gas.png" alt="gas" width="100" height="85">
+            <p>GAS</p>
+          </div>
+
+          <div class="icon">
+            <img src="images/vba.png" alt="vba" width="90" height="90">
+            <p>Excel VBA</p>
+          </div>
+
+          <div class="icon">
+            <img src="images/python.png" alt="python" width="90" height="90">
+            <p>Python</p>
+          </div>
+
+        </div>
+
+        <div class="work">
+          <p>
+            <i class="fas fa-star-of-life fa-xs"></i> HTML/CSSを使用した静的なWebサイト<br>
+            <i class="fas fa-star-of-life fa-xs"></i> JavaScriptによるアニメーションを用いた動的なWebサイト 等、<br>
+            ご希望の内容に沿って正確・迅速に制作いたします。
+            どうぞお気軽に<a class="tocontact" href="#contact">お問い合わせ</a>ください。
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <section id="services">
+    <p class="seisaku">制作物（一例）</p>
+    <div class="servicesupper">
+
+      <div class="pdt"><a class="pdt" href="#top"><img src="images/work1.jpg" alt="work1" width="379" height="195"></a>
+        <a class="pdtname" href="#top">
+          <p>私のポートフォリオ</p>
+        </a>
+      </div>
+
+      <div class="pdt"><a class="pdt" href="#top"><img src="images/landhouse.jpg" alt="work2" width="379" height="195"></a>
+        <a class="pdtname" href="landhouse/top/top.html"  target="_blank" rel="noreferrer">
+          <p>事務所ＨＰ(サンプル)</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="serviceslower">
+
+      <div class="pdt"><a class="pdt" href="clock/clock.html" target="_blank" rel="noreferrer"><img
+            src="images/work3.jpg" alt="work3" height="195" width="379"></a>
+        <a class="pdtname" href="clock/clock.html" target="_blank" rel="noreferrer">
+          <p>アナログ時計</p>
+        </a>
+      </div>
+
+      <div class="pdt"><a class="pdt" href="calculator/cal.html" target="_blank" rel="noreferrer"><img
+        src="images/work4.jpg" alt="work4" height="195" width="379"></a>
+        <a class="pdtname" href="calculator/cal.html" target="_blank" rel="noreferrer">
+          <p>電卓</p>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="jissouwrapper">
+      <p class="jissou">実装機能（一例）</p>
+      <div class="topic">アイコンの強調</div>
+      <div class="slides">
+        <div class="fasleft"><i class="fas fa-chevron-circle-left fa-2x change prev"></i></div>
+        <div class="slidefour">
+          <ul class="marginzero">
+            <li class="slide active"><video preload="auto" width="350px" src="images/icon.mp4" muted autoplay playinline
+                loop></video></li>
+            <li class="slide"><video preload="auto" width="350px" src="images/modal.mp4" muted autoplay playinline
+                loop></video></li>
+            <!--chromeではautoplayとmutedをセットで書く-->
+            <li class="slide"><video preload="auto" width="350px" src="images/responsive.mp4" muted autoplay playinline
+                loop></video></li>
+            <li class="slide"><video preload="auto" width="350px" src="images/show.mp4" muted autoplay playinline
+                loop></video></li>
+          </ul>
+        </div>
+        <div class="fasright"><i class="fas fa-chevron-circle-right fa-2x change next"></i></div>
+      </div>
+    
+
+    <div class="numbers">
+      <div class="numberbtn isActive"><img src="images/icon.jpg" alt="modal"></div>
+      <div class="numberbtn"><img src="images/modal.jpg" alt="modal"></div>
+      <div class="numberbtn"><img src="images/responsive.jpg" alt="modal"></div>
+      <div class="numberbtn"><img src="images/show.jpg" alt="modal"></div>
+    </div>
+
+  </div>
+
+  <div class="servicesfinish">
+  </div>
+
+  </section>
+
+
+
+  <section id="contact">
+
+    <div id="wrapper">
+      <div id="inquiry">
+        <h3><i class="far fa-envelope"></i>&nbsp;お問い合わせ</h3>
+        <p>ご依頼・ご相談など、以下のフォームより<br>
+          お気軽にお問い合わせください。</p><br>
+        <form name='contactform' id="contactForm" method="post">
+          お名前【必須】<br>
+          <input class='contact-form-name' id="contactFormName" name='name' size='30' type='text' value=''
+            placeholder='山田 花子' /><br><br>
+          メールアドレス【必須】<br>
+          <input class='contact-form-email' id="contactFormEmail" name='email' size='30' type='text' value=''
+            placeholder='mail@example.jp' /><br><br>
+          お問い合わせ内容【必須】<br>
+          <textarea class='contact-form-message' id="contactFormMessage" name='message' cols='50' rows='15'
+            placeholder='本文'></textarea><br><br>
+          <div id="confirm-btn">
+            <!-- <input class='contact-form-button-submit' type='submit' value='確認画面へ'/> -->
+            確認画面へ
+          </div>
+
+          <!--<noscript><input type='hidden' name='noscript' type='text' value='true' /></noscript>-->
+        </form>
+      </div>
+    </div>
+
+
+    <!-- モーダル画面用 -->
+    <div class="login-modal-wrapper" id="login-modal">
+      <!--モーダルの背景(薄い黒色部分)を作るために必要-->
+      <div class="modal">
+        <!--モーダルのメイン背景を作るために必要-->
+
+        <div class="close-modal">
+          <!-- xボタン(閉じるボタン)-->
+          <i class="fa fa-2x fa-times"></i>
+        </div>
+
+        <h3>ご入力内容</h3>
+
+        <form name="lastcheck" method="post">
+          【お名前】<br>
+          <div id="boxName" name="name">
+          </div><br>
+          【メールアドレス】<br>
+          <div id="boxEmail" name="email">
+          </div><br>
+          【お問い合わせ内容】<br>
+          <div id="boxMessage" name="message">
+          </div><br>
+
+          <div id="modify-btn">
+            前の画面に戻って<br>
+            修正
+          </div>
+
+          <div id="submit-btn">
+            送　信
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+  </section>
+
+  <footer>
+    <p>© 2020 Toshihiro OSAKA </p>
+  </footer>
+
+  <!--以下２行はjQueryを動かすために必要-->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
